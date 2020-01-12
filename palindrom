@@ -1,0 +1,9 @@
+slowo=input("Wprowadz slowo: ")
+i= len(slowo)
+for n in range(i):
+    if slowo[n]!=slowo[-1-n]:
+        print("Nie palindrom.")
+        break
+    else:
+        print("Palindrom.")
+        break
