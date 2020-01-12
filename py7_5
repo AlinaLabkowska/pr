@@ -1,0 +1,25 @@
+import random
+
+A=[]
+for r in range(0,10):
+    A.append(random.randint(1,101))
+print(A)
+
+#Ponizsza funkcja znajduje liczby pierwsze w podanej granicy liczbowej.
+def primes(limit):
+    tab=[]
+    for i in range(2,limit):
+        for j in tab:
+            if i % j == 0:
+                break
+        else:
+            yield i
+            tab.append(i)
+
+B=[]
+for i in primes(100):
+    B.append(i)
+print(B)
+
+result=list(set(A)&set(B))
+print(result)
