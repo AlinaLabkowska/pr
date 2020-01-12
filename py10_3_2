@@ -1,0 +1,38 @@
+import networkx as nx
+import matplotlib.pyplot as plt
+import numpy as np
+
+D=nx.Graph()
+K=[(0,1),(0,4),(1,2),(1,3),(2,9),(4,5),(4,6),(6,7),(6,8)]
+D.add_edges_from(K)
+W=D.nodes()
+
+#Macierz incydencji:
+'''N=[1:[1,0,0,0,1,0,0,0,0],
+2:[1,1,1,0,0,0,0,0,0],
+3:[0,1,0,1,0,0,0,0,0],
+4:[0,0,1,0,0,0,0,0,0],
+5:[0,0,0,0,1,1,1,0,0],
+6:[0,0,0,1,1,1,0,0,0],
+7:[0,0,0,0,0,0,1,1,1],
+8:[0,0,0,0,0,0,0,1,0],
+9:[0,0,0,0,0,0,0,0,1],
+10:[0,0,0,1,0,0,0,0,0]]'''
+
+nx.draw(D)
+plt.show()
+
+n=[]
+for i in W:
+    li=D.neighbors(i)
+    print(li)
+    if len(li)==1:
+        n.append([i, li[0]])
+print('Liscia to krawedzie',n)
+
+D.remove_node(min(n)[0])
+D.remove_node(max(n)[0])
+D.add_edges_from([(min(n)[1], max(n)[0]), (max(n)[1], min(n)[0])])
+
+nx.draw(D)
+plt.show()
