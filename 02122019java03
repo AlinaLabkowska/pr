@@ -1,0 +1,24 @@
+import java.util.Arrays;
+import java.util.*;
+import java.io.*;
+
+public class Main {
+public static void main(String[] args) throws FileNotFoundException{
+Scanner odczyt = new Scanner(new File ("napis.txt"));
+String wiersz;
+List<String> lista = new ArrayList<>();
+List<String> lista2 = new ArrayList<>();
+while(odczyt.hasNextLine()) {
+wiersz=odczyt.nextLine();
+lista.add(wiersz);
+}
+for(int i=0;i<lista.size();i++){
+String a=lista.get(i);
+lista.remove(lista.get(i));
+if(lista.contains(a)){
+lista2.add(a);
+}
+}
+System.out.println(lista2);
+}
+}
