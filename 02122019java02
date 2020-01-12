@@ -1,0 +1,8 @@
+import java.math.*;
+public class Main {
+public static void main(String[] args) {
+BigDecimal liczbaZPrzecinkiem = new BigDecimal("1.123456789");
+BigDecimal liczbaZPrzecinkiem2 = new BigDecimal(Math.PI);
+System.out.println(liczbaZPrzecinkiem.subtract(liczbaZPrzecinkiem2));
+}
+}
