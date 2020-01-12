@@ -1,0 +1,15 @@
+def SortBubbleReverse(n, tablica):
+    for j in range(n-1,0,-1):
+        for i in range(j):
+            if tablica[i]<tablica[i+1]:
+                tablica[i],tablica[i+1]=tablica[i+1],tablica[i]
+    return tablica
+
+T=open("T.txt","r",encoding="utf")
+lis=T.read()
+T.close
+
+got=lis.split()
+
+b=SortBubbleReverse(len(got),got)
+print(b)
