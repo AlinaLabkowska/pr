@@ -1,0 +1,43 @@
+def SortQuick(n,tab):
+   quickSortHelper(tab,0,n-1)
+   return tab
+
+def quickSortHelper(tab,first,last):
+   if first<last:
+       splitpoint = partition(tab,first,last)
+
+       quickSortHelper(tab,first,splitpoint-1)
+       quickSortHelper(tab,splitpoint+1,last)
+
+def partition(tab,first,last):
+   pivotvalue = tab[first]
+   leftmark = first+1
+   rightmark = last
+   done = False
+   while not done:
+       while leftmark <= rightmark and tab[leftmark] <= pivotvalue:
+           leftmark = leftmark + 1
+       while tab[rightmark] >= pivotvalue and rightmark >= leftmark:
+           rightmark = rightmark -1
+       if rightmark < leftmark:
+           done = True
+       else:
+           temp = tab[leftmark]
+           tab[leftmark] = tab[rightmark]
+           tab[rightmark] = temp
+
+   temp = tab[first]
+   tab[first] = tab[rightmark]
+   tab[rightmark] = temp
+
+   return rightmark
+
+T='karol'
+T=SortQuick(len(T),list(T))
+print(T)
+
+T1=[]
+for i in range(0,len(T),2):
+    T1.append(T[i])
+
+print(T1)
