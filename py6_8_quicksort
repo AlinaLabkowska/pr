@@ -1,0 +1,11 @@
+T=open("T.txt","r",encoding="utf")
+lis=T.read()
+T.close
+
+got=lis.split()
+
+#Funkcja sort() jest funkcja wbudowana, jaka korzysta z algorytmu sortowania Quicksort.
+#Wartosc reverse=True odwraca liste.
+got.sort(reverse=True)
+
+print(got)
