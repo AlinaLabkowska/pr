@@ -1,0 +1,17 @@
+def NWD(a,b):
+    while a!=b:
+        if a>b:
+            a=a-b
+        else:
+            b=b-a
+    return a
+
+def main():
+    x=int(input("x= "))
+    y=int(input("y= "))
+    z=int(input("z= "))
+    nwd=NWD(NWD(x,y),z)
+    print(nwd)
+
+if __name__ == '__main__':
+    main()
