@@ -1,0 +1,10 @@
+f=open("tekst_4_2.txt","r",encoding="utf")
+lis=f.read()
+f.close
+
+got=lis.split()
+
+for sl in range(0,len(got)):
+    slowo=got[sl]
+    if (slowo[0]=="s")&(slowo[-1]=="y"):
+        print(slowo)
