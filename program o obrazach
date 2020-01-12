@@ -1,0 +1,67 @@
+public class Obraz {
+    String nazwa;
+    String autor;
+    int rok;
+    String styl;
+    public void wisi() {}
+    static String wlasciciel;
+    private int cena;
+
+    void set_cena(int cena) {
+        if (cena<1000) System.out.println("Dzielo sztuki nie moze tyle kosztowac!");
+        else
+            this.cena=cena;
+    }
+    int get_cena () {
+        return cena;
+    }
+
+    Obraz(String nazwa, String autor, int rok, String styl) {
+        this.nazwa=nazwa;
+        this.autor=autor;
+        this.rok=rok;
+        this.styl=styl;
+        this.wlasciciel=wlasciciel;
+        this.cena=cena;
+    }
+}
+
+public class AmericanGothic extends Obraz {
+    public void wisi() {}
+    public void niepokoiMnie() {}
+
+    AmericanGothic(String nazwa, String autor, int rok, String styl) {
+        super(nazwa, autor, rok, styl);
+    }
+}
+
+public class MonaLisa extends Obraz {
+    public void wisi() {}
+    public void usmiechaSie() {}
+    int rokKradziezy;
+
+    MonaLisa(String nazwa, String autor, int rok, String styl, int rokKradziezy) {
+        super(nazwa, autor, rok, styl);
+        this.rokKradziezy=rokKradziezy;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        AmericanGothic o01 = new AmericanGothic("American Gothic", "Grant Wood",1930, "Modernizm");
+        MonaLisa o02 = new MonaLisa("Mona Lisa", "Leonardo da Vinci", 1507, "Renesans", 1911);
+        Obraz o03 = new Obraz("Kompozycja 8", "Wassily Kandinsky", 1923, "Supremtyzm");
+        Obraz.wlasciciel="Muzeum";
+
+        System.out.println(MonaLisa.wlasciciel);
+        AmericanGothic.wlasciciel="Alina";
+        System.out.println(MonaLisa.wlasciciel);
+
+        o03.set_cena(2500);
+      //System.out.println(o03.cena); blad
+        System.out.println(o03.get_cena());
+
+
+
+    }
+}
