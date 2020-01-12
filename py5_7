@@ -1,0 +1,11 @@
+import re
+
+#Ponizej jest przedstawiona przykladowa zmienna tekstowa.
+r='1+(4+(7-5)*(3+6)),5,982+8*3'
+
+a=re.split(',',r)
+print(a)
+
+for i in range(0,len(a)):
+    print(eval(a[i]))
+#Funkcja eval() wykonuje wyrazenie zawarte w lancuchu i zwraca wynik.
