@@ -1,0 +1,153 @@
+public class Pojazd {
+    int rokProdukcji;
+    String rodzajSilnika;
+    String kolor;
+    int masa;
+    public void uruchomSilnik() {}
+
+    Pojazd(int rokProdukcji, String rodzajSilnika, String kolor, int masa) {
+        this.rokProdukcji=rokProdukcji;
+        this.rodzajSilnika=rodzajSilnika;
+        this.kolor=kolor;
+        this.masa=masa;
+    }
+}
+
+public class Kolowe extends Pojazd {
+    String rozmiarOpony;
+    public void uruchomSilnik() {}
+
+    Kolowe(int rokProdukcji, String rodzajSilnika, String kolor, int masa, String rozmiarOpony) {
+      super(rokProdukcji, rodzajSilnika, kolor, masa);
+      this.rozmiarOpony=rozmiarOpony;
+    }
+}
+
+public class Ciezarowka extends Kolowe {
+    int udzwig;
+    public void uruchomSilnik() {}
+    public void podniesSkrzynie() {}
+
+    Ciezarowka(int rokProdukcji, String rodzajSilnika, String kolor, int masa, String rozmiarOpony, int udzwig) {
+        super(rokProdukcji, rodzajSilnika, kolor, masa, rozmiarOpony);
+        this.udzwig=udzwig;
+    }
+}
+
+public class Osobowy extends Kolowe {
+    int iloscOsob;
+    public void uruchomSilnik() {}
+
+    Osobowy(int rokProdukcji, String rodzajSilnika, String kolor, int masa, String rozmiarOpony, int iloscOsob) {
+        super(rokProdukcji, rodzajSilnika, kolor, masa, rozmiarOpony);
+        this.iloscOsob=iloscOsob;
+    }
+}
+
+public class Sedan extends Osobowy {
+    public void uruchomSilnik() {}
+
+    Sedan(int rokProdukcji, String rodzajSilnika, String kolor, int masa, String rozmiarOpony, int iloscOsob) {
+        super(rokProdukcji, rodzajSilnika, kolor, masa, rozmiarOpony, iloscOsob);
+    }
+}
+
+public class Pickup extends Osobowy {
+    public void uruchomSilnik() {}
+
+    Pickup(int rokProdukcji, String rodzajSilnika, String kolor, int masa, String rozmiarOpony, int iloscOsob) {
+        super(rokProdukcji, rodzajSilnika, kolor, masa, rozmiarOpony, iloscOsob);
+    }
+}
+
+public class VW extends Sedan {
+    public void uruchomSilnik() {}
+
+    VW(int rokProdukcji, String rodzajSilnika, String kolor, int masa, String rozmiarOpony, int iloscOsob) {
+        super(rokProdukcji, rodzajSilnika, kolor, masa, rozmiarOpony, iloscOsob);
+    }
+}
+
+public class Golf extends VW {
+    public void uruchomSilnik() {}
+
+    Golf(int rokProdukcji, String rodzajSilnika, String kolor, int masa, String rozmiarOpony, int iloscOsob) {
+        super(rokProdukcji, rodzajSilnika, kolor, masa, rozmiarOpony, iloscOsob);
+    }
+}
+
+public class Skoda extends Sedan {
+    public void uruchomSilnik() {}
+
+    Skoda(int rokProdukcji, String rodzajSilnika, String kolor, int masa, String rozmiarOpony, int iloscOsob) {
+        super(rokProdukcji, rodzajSilnika, kolor, masa, rozmiarOpony, iloscOsob);
+    }
+}
+
+public class SuperB extends Skoda {
+    public void uruchomSilnik() {}
+
+    SuperB(int rokProdukcji, String rodzajSilnika, String kolor, int masa, String rozmiarOpony, int iloscOsob) {
+        super(rokProdukcji, rodzajSilnika, kolor, masa, rozmiarOpony, iloscOsob);
+    }
+}
+
+public class Octavia extends Skoda {
+    public void uruchomSilnik() {}
+
+    Octavia(int rokProdukcji, String rodzajSilnika, String kolor, int masa, String rozmiarOpony, int iloscOsob) {
+        super(rokProdukcji, rodzajSilnika, kolor, masa, rozmiarOpony, iloscOsob);
+    }
+}
+
+public class Szynowe extends Pojazd {
+    public void uruchomSilnik() {}
+
+    Szynowe(int rokProdukcji, String rodzajSilnika, String kolor, int masa) {
+        super(rokProdukcji, rodzajSilnika, kolor, masa);
+    }
+}
+
+public class Pociag extends Szynowe {
+    public void uruchomSilnik() {}
+
+    Pociag(int rokProdukcji, String rodzajSilnika, String kolor, int masa) {
+        super(rokProdukcji, rodzajSilnika, kolor, masa);
+    }
+}
+
+public class Gasienicowe extends Pojazd {
+    int moc;
+    public void uruchomSilnik() {}
+
+    Gasienicowe(int rokProdukcji, String rodzajSilnika, String kolor, int masa, int moc) {
+        super(rokProdukcji, rodzajSilnika, kolor, masa);
+        this.moc=moc;
+    }
+}
+
+public class Czolg extends Gasienicowe {
+    public void uruchomSilnik() {}
+
+    Czolg(int rokProdukcji, String rodzajSilnika, String kolor, int masa, int moc) {
+        super(rokProdukcji, rodzajSilnika, kolor, masa, moc);
+    }
+}
+
+public class Spychacz extends Gasienicowe {
+    public void uruchomSilnik() {}
+
+    Spychacz(int rokProdukcji, String rodzajSilnika, String kolor, int masa, int moc) {
+        super(rokProdukcji, rodzajSilnika, kolor, masa, moc);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Golf superAuto = new Golf (1983, "benzynowy", "czerwony", 910, "155/80 R13", 5);
+        System.out.println("Informacja o Golfie:"+"\n Rok produkcji: "+superAuto.rokProdukcji+"\n Rodzaj silnika: "+superAuto.rodzajSilnika+"\n Kolor: "+superAuto.kolor+"\n Masa: "+superAuto.masa+" kg"+"\n Rozmiar opony: "+superAuto.rozmiarOpony+"\n Ilosc osob: "+superAuto.iloscOsob);
+        Spychacz dzieloSztuki = new Spychacz (2009, "wysokoprezny", "granatowy", 21, 210);
+        System.out.println("Informacja o spychaczu:"+"\n Rok produkcji: "+dzieloSztuki.rokProdukcji+"\n Rodzaj silnika: "+dzieloSztuki.rodzajSilnika+"\n Kolor: "+dzieloSztuki.kolor+"\n Masa: "+dzieloSztuki.masa+" t"+"\n Moc: "+dzieloSztuki.moc+" KM");
+
+    }
+}
