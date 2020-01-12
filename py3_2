@@ -1,0 +1,9 @@
+import re
+
+tekst=open('text1.txt','r',encoding='utf')
+bla=tekst.read()
+tekst.close()
+
+a=re.split(' , | . | ',bla)
+
+print('Tekst zawiera',a,len(a),'slow(a).')
