@@ -1,0 +1,9 @@
+x=input("Wprowadz liczbe: ")
+
+print("Liczba zawiera ",len(x)," cyfr(y).")
+
+suma=0
+for i in range(0,len(x)):
+    a=int(x[i])
+    suma+=a
+print("Suma cyfr liczby: ",suma)
