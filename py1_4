@@ -1,0 +1,10 @@
+import math
+
+x=float(input("Wprowadz x: "))
+y=float(input("Wprowadz y: "))
+
+if (x-y)>0 and (x**2-x)>0 and (y+y**2):
+    z=(math.log(x-y)+x+y)/(((math.log(x**2-x))/(math.log(y+y**2)))+y-1)
+    print("z =",z)
+else:
+    print("Logaryfm nie moze zawierac liczby ujemnej i zero.")
