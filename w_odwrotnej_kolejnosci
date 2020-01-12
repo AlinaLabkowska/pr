@@ -1,0 +1,10 @@
+slowo=input("Wprowadz slowo: ")
+# Sprawdzamy, ile liter jest w slowie.
+i=len(slowo)
+# Odwrocone slowo zaczynamy od ostatniej litery. Ma ona indeks -1.
+n=-1
+''' Bedziemy zmiejszac indeks litery o jeden. Liczba liter nie moze przekracac
+liczby liter w podanym przez uzytkownika slowie, bo bedziemy mieli blad. '''
+while n>=-i:
+    print(slowo[n], end="")
+    n=n-1
