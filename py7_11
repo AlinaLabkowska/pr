@@ -1,0 +1,23 @@
+st='Ala ma kota i psa. Ala lubi owoce.'
+
+n=0
+for i in range(0,len(st)):
+    if st[i]=='i':
+        n+=1
+print('Tekst zawiera',n,'liter/e i.')
+
+w=0
+for i in range(0,len(st)):
+    if st[i]=='k':
+        w+=1
+print('Tekst zawiera',w,'liter/e k.')
+
+l=list(st)
+for i in range(0,len(l)):
+    if l[i]=='i':
+        l[i]='k'
+    elif l[i]=='k':
+        l[i]='i'
+
+
+print(l)
