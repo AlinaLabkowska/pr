@@ -1,0 +1,28 @@
+def gip(x,y):
+    c=(x**2+y**2)**0.5
+    return c
+
+x1=int(input('wpr x1: '))
+y1=int(input('wpr y1: '))
+x2=int(input('wpr x2: '))
+y2=int(input('wpr y2: '))
+x3=int(input('wpr x3: '))
+y3=int(input('wpr y3: '))
+
+c1=gip(x2-x1,y2-y1)
+
+c2=gip(x3-x2,y3-y2)
+
+dlina=c1+c2
+
+print(dlina)
+
+d1=x1+y1
+d2=x2+y2
+d3=x3+y3
+
+dl={d1:(x1,y1),d2:(x2,y2),d3:(x3,y3)}
+l=[d1,d2,d3]
+l.sort()
+
+print(dl[l[0]])
