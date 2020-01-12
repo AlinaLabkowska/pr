@@ -1,0 +1,19 @@
+import math
+
+def l(a):
+    if a<=0:
+        print('nie')
+    else:
+        b=math.log(a,(2.718))
+        return b
+
+x=float(input('Wprowadz x:'))
+y=float(input('Wprowadz y:'))
+
+if l(y+y**2)==0:
+    print('nie')
+elif ((l(x**2-x))/(l(y+y**2))+y-1)==0:
+    print('nie')
+else:
+    z=(l(x-y)+x+y)/(l(x**2-x)/(l(y+y**2))+y-1)
+    print('z=',z)
