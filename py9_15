@@ -1,0 +1,54 @@
+# definicja kolejki (queue)
+def KolejkaInit(kolejka):
+      kolejka = []
+      return kolejka
+# czy kolejka jest pusta
+def isEmptyKolejka(kolejka):
+      if kolejka==[]:
+        return True
+      else:
+        return False
+# dodawanie elementu do kolejki na koniec
+def PushEndKolejka(kolejka, dane):
+      kolejka.append(dane)
+# usuwanie elementu z kolejki na gorze
+def PopKolejka(kolejka):
+   if not isEmptyKolejka(kolejka):
+     kolejka.pop(0)
+   return kolejka
+# liczba elementow w kolejce
+def SizeKolejka(kolejka):
+   return len(kolejka)
+# odczytywanie elementu z kolejki na gore
+def PeekKolejka(kolejka):
+  if not isEmptyKolejka(kolejka):
+    return kolejka[0]
+# odczytywanie elementu z kolejki na koncu
+def PeekEndKolejka(kolejka):
+   return kolejka[len(kolejka)-1]
+
+def SortBubble(n, tablica):
+    for j in range(n-1,0,-1):
+        for i in range(j):
+            if len(tablica[i])>len(tablica[i+1]):
+                tablica[i],tablica[i+1]=tablica[i+1],tablica[i]
+    return tablica
+
+ko=[]
+KolejkaInit(ko)
+print(isEmptyKolejka(ko))
+
+PushEndKolejka(ko,'rozsadek')
+PushEndKolejka(ko,'lustro')
+PushEndKolejka(ko,'amok')
+PushEndKolejka(ko,'dusza')
+PushEndKolejka(ko,'ksiezyc')
+PushEndKolejka(ko,'lekarstwo')
+
+#Sortowanie wedlug dlugosci slow.
+SortBubble(len(ko),ko)
+print(ko)
+
+#Dodawanie najdluzszego slowa na koniec kolejki.
+PushEndKolejka(ko,ko[-1])
+print(ko)
